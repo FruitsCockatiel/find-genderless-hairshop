@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성별 구분 없는 미용실 찾기</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>지역 이름을 적어주세요</h1>
+    <input type="text" id="locationInput" placeholder="예: 강남">
+    <button onclick="searchHairShops()">검색</button>
+
+    <script>
+        function searchHairShops() {
+            const location = document.getElementById("locationInput").value;
+            if (location.trim() !== "") {
+                window.location.href = `search.html?location=${encodeURIComponent(location)}`;
+            } else {
+                alert("지역 이름을 입력해주세요!");
+            }
+        }
+    </script>
+</body>
+</html>
